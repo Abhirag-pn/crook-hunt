@@ -1,4 +1,7 @@
+
+import 'package:crookhunt/ui/pages/intropage.dart';
 import 'package:crookhunt/ui/pages/pageresolver.dart';
+import 'package:crookhunt/ui/pages/registerpage.dart';
 import 'package:crookhunt/utils/shared_pref_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff2F1700)),
         useMaterial3: true,
       ),
-      home: const PageResolver()
+      home: PageResolver()
     );
   }
 }
