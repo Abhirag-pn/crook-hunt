@@ -32,7 +32,7 @@ class CustomTextFeild extends StatelessWidget {
                     hintText: hinttext,
                     hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: const Color(0xff2F1700)),
                   
-                    contentPadding: const EdgeInsets.all(8), 
+                    contentPadding:  EdgeInsets.all(MediaQuery.of(context).size.width/30), 
                 ),
               ),
             ),
