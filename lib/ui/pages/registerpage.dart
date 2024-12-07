@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
@@ -14,6 +15,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool _isLoading=true;
   final TextEditingController idcontroller=TextEditingController();
   final TextEditingController mem1controller=TextEditingController();
   final TextEditingController mem2controller=TextEditingController();
@@ -21,6 +23,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
 @override
   void initState() {
+    Timer(const Duration(milliseconds: 1500), () {
+      setState(() {
+        _isLoading = false;
+      });});
     if(SharedPrefService.getTeamId()!=null)
     {
       log(SharedPrefService.getTeamId()!);
@@ -32,6 +38,16 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    if(_isLoading)
+    {
+      return  Scaffold(
+      backgroundColor: Colors.black,
+      body: 
+      Center(
+        child: Text("Ready for the hunt ?",style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.white),),
+      )
+    );
+    }else{
     return  Container(
       decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/bg.jpg',),fit:BoxFit.cover )),
       child: Scaffold(
@@ -73,6 +89,6 @@ class _RegisterPageState extends State<RegisterPage> {
             ],
           ),
           ),
-    ));
+    ));}
   }
 }

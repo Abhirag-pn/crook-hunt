@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:crookhunt/ui/pages/loadingpage.dart';
+
 import 'package:crookhunt/ui/pages/registerpage.dart';
 import 'package:crookhunt/utils/firestoreservice.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,11 @@ class PageResolver extends StatelessWidget {
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return const LoadingPage();
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
           default:
             if (snapshot.hasError) {
               log("Error: ${snapshot.error}");
