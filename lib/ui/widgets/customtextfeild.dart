@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomTextFeild extends StatelessWidget {
   final String hinttext;
-  const CustomTextFeild({super.key, required this.hinttext});
+  final TextEditingController controller;
+  const CustomTextFeild({super.key, required this.hinttext, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomTextFeild extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0), 
                 child: TextFormField(
                   cursorColor:const Color(0xff2F1700) ,
-                  
+                  controller: controller,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(color: const Color(0xff2F1700)),
                   decoration:  InputDecoration(
                     hoverColor: const Color(0xff2F1700),
@@ -31,7 +32,7 @@ class CustomTextFeild extends StatelessWidget {
                     hintText: hinttext,
                     hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: const Color(0xff2F1700)),
                   
-                    contentPadding: EdgeInsets.all(8), 
+                    contentPadding: const EdgeInsets.all(8), 
                 ),
               ),
             ),

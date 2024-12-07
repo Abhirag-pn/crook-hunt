@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "714341574841",
+    "project_id": "crookhunt-cc24c",
+    "storage_bucket": "crookhunt-cc24c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714341574841:android:10e626957f3bfa077c1368",
+        "android_client_info": {
+          "package_name": "crook.hunt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOm2F2EIYW5xVZSSzRccPoG_gSgAKT5XM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

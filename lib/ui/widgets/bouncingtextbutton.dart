@@ -54,7 +54,6 @@ class _BouncingTextButtonState extends State<BouncingTextButton>
       builder: (context, child) {
         return GestureDetector(
             onTap: () {
-              // AudioHelper.instance.playTextButtonClick();
              _controller.forward();
              widget.action();
             },
