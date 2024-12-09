@@ -1,4 +1,4 @@
-
+import 'package:crookhunt/ui/pages/level1.dart';
 import 'package:crookhunt/ui/pages/loadingpage.dart';
 import 'package:crookhunt/ui/pages/pageresolver.dart';
 import 'package:crookhunt/ui/pages/registerpage.dart';
@@ -7,11 +7,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,]);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   await SharedPrefService.init();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -23,16 +24,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Crook Hunt',
-      theme: ThemeData(
-        
-        fontFamily: 'Henny',
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff2F1700)),
-        useMaterial3: true,
-      ),
-      home: const LoadingPage()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Crook Hunt',
+        theme: ThemeData(
+          fontFamily: 'Henny',
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff2F1700)),
+          useMaterial3: true,
+        ),
+        home: const Level1());
   }
 }
-

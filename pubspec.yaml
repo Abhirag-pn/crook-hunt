@@ -82,6 +82,9 @@ flutter:
     - family: Henny
       fonts:
         - asset: assets/fonts/HennyPenny-Regular.ttf
+    - family: Neucha
+      fonts:
+        - asset: assets/fonts/Neucha-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
