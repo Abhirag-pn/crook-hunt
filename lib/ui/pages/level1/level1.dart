@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:crookhunt/ui/pages/level1/level1content.dart';
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class Level1 extends StatefulWidget {
 }
 
 class _LevelOneState extends State<Level1> {
+  int currentIndex=0;
   final controller = TurnPageController();
   @override
   Widget build(BuildContext context) {
@@ -32,8 +35,11 @@ class _LevelOneState extends State<Level1> {
                 backgroundColor: Colors.brown,
                 child: const Icon(Icons.arrow_back),
                 onPressed: () {
+                   log(currentIndex.toString());
                   setState(() {
-                    controller.previousPage();
+                    if(currentIndex>0&&currentIndex<content1.length)
+                    {currentIndex-=1;
+                    controller.previousPage();}
                   });
                 }),
             const SizedBox(
@@ -44,7 +50,18 @@ class _LevelOneState extends State<Level1> {
                 backgroundColor: Colors.brown,
                 child: const Icon(Icons.arrow_forward),
                 onPressed: () {
-                  controller.nextPage();
+                  log(currentIndex.toString());
+                  
+                  if(currentIndex==content1.length-1)
+                  {
+                    log("Move to entry");
+                    return;
+                  }
+                  if(currentIndex<content1.length-1){
+                    currentIndex+=1;
+                     controller.nextPage();
+                  }
+                  
                  
                 }),
           ],
