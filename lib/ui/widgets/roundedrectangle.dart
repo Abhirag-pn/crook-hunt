@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class RoundedImageWidget extends StatelessWidget {
   final String imagePath; // Path to the image asset
-
+  final bool clue;
   const RoundedImageWidget({
     super.key,
-    required this.imagePath,
+    required this.imagePath,  this.clue=false,
   });
 
   @override
@@ -17,7 +17,7 @@ class RoundedImageWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Imagedisplay(img: imagePath),));
+       if(clue) Navigator.of(context).push(MaterialPageRoute(builder: (context) => Imagedisplay(img: imagePath),));
       },
       child: Container(
         width: width,

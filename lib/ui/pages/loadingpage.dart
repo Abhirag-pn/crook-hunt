@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:crookhunt/ui/pages/pageresolver.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -14,7 +16,7 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     Future.delayed(const Duration(milliseconds: 3000)).then((val)
     {Navigator.popUntil(context,(route,) => route.isFirst,);
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => PageResolver(),));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const PageResolver(),));
     });
    
     super.initState();

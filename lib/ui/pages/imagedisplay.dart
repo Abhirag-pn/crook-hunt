@@ -10,21 +10,62 @@ class Imagedisplay extends StatefulWidget {
 }
 
 class _ImagedisplayState extends State<Imagedisplay> {
-  bool hide=true;
+  bool hide = true;
   String? selectedAction;
 
-  // Function to handle dropdown item click
+ 
   void _onDropdownItemSelected(String? value) {
     if (value == 'info') {
-      //TODO impliment info for task with image path
+      //TODO implement info for task with image path
     } else if (value == 'delete') {
-      if(widget.img=='assets/images/level1/two.jpg')
-      {
-        setState(() {
-          hide=false;
-        });
-      }
+      // Show confirmation dialog before hiding the image
+      _showDeleteConfirmationDialog();
     }
+  }
+
+  void _showDeleteConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext ctx) {
+        return AlertDialog(
+          title:  Text('Confirm Delete',style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontFamily: 'Neucha'),),
+          content:  Text('Are you sure you want to delete this image?',style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontFamily: 'Neucha'),),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx); // Close the dialog
+              },
+              child:  Text('Cancel',style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontFamily: 'Neucha'),),
+            ),
+            TextButton(
+              onPressed: () {
+                // Confirm delete (hide the image)
+                setState(() {
+                  //TODO change correct to image
+                  if (widget.img == 'assets/images/level1/two.jpg') {
+                    hide = false;
+                  }
+                });
+                Navigator.of(ctx).pop();
+              },
+              child:  Text('Yes',style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontFamily: 'Neucha',color: Colors.red)),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -52,18 +93,29 @@ class _ImagedisplayState extends State<Imagedisplay> {
             onChanged: (String? newValue) {
               setState(() {
                 selectedAction = newValue;
-                _onDropdownItemSelected(newValue);  // Handle the selection
+                _onDropdownItemSelected(newValue); // Handle the selection
               });
             },
-            items:  [
+            items: [
               DropdownMenuItem<String>(
                 value: 'info',
-                child: Text('Info',style: Theme.of(context).textTheme.titleMedium!.copyWith(fontFamily: 'Neucha'),),
+                child: Text(
+                  'Info',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontFamily: 'Neucha'),
+                ),
               ),
               DropdownMenuItem<String>(
                 value: 'delete',
-                child: Text('Delete',style: Theme.of(context).textTheme.titleMedium!.copyWith(fontFamily: 'Neucha'),),
-
+                child: Text(
+                  'Delete',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontFamily: 'Neucha'),
+                ),
               ),
             ],
           ),
@@ -75,7 +127,7 @@ class _ImagedisplayState extends State<Imagedisplay> {
         width: double.maxFinite,
         child: PinchZoom(
           child: Image.asset(
-            hide?widget.img:'assets/images/hidden.png',
+            hide ? widget.img : 'assets/images/hidden.png',
             fit: BoxFit.contain,
           ),
         ),
