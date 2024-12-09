@@ -81,6 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mem2controller.clear();
               mem3controller.clear();
                await SharedPrefService.setTeamId(teamid);
+                // ignore: use_build_context_synchronously
                 await FirestoreService.setTeamData(teamid, mem1, mem2, mem3,context);
                 
               }),

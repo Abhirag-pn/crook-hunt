@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crookhunt/utils/shared_pref_service.dart';
@@ -45,6 +47,7 @@ class FirestoreService {
       }
     } catch (e) {
       log("Error fetching team data: $e");
+      
       _showSnackBar(context, "Error fetching team data: $e");
       return null;
     }

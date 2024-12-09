@@ -1,9 +1,9 @@
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/level1/answer1.dart';
 import 'package:crookhunt/ui/pages/level1/level1content.dart';
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:flutter/material.dart';
-import 'package:page_flip/page_flip.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
 
 class Level1 extends StatefulWidget {
@@ -54,13 +54,15 @@ class _LevelOneState extends State<Level1> {
                   
                   if(currentIndex==content1.length-1)
                   {
-                    log("Move to entry");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Answer1(),));
+                    
                     return;
                   }
                   if(currentIndex<content1.length-1){
                     currentIndex+=1;
                      controller.nextPage();
                   }
+                 
                   
                  
                 }),

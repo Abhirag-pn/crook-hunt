@@ -82,6 +82,7 @@ class _RulesPageState extends State<RulesPage> {
                       button: "assets/images/submit.png", action: () {
                         if(codecontroller.text.toLowerCase().trim()=="100100"){
 
+                            // ignore: prefer_const_constructors
                             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Paper(text: ""),));
                         }
                       }),

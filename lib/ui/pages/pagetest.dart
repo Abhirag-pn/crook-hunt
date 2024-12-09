@@ -1,6 +1,5 @@
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:flutter/material.dart';
-import 'package:page_flip/page_flip.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
 
 class PageTest extends StatefulWidget {
