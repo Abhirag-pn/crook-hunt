@@ -13,20 +13,22 @@ class OldPaperWidget extends StatelessWidget {
     final double width = screenSize.width * 0.9; // 90% of screen width
     final double height = screenSize.height * 0.9; // 90% of screen height
 
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        CustomPaint(
-          size: Size(width, height),
-          painter: TornPaperPainter(),
-        ),
-        if (child != null)
-          SizedBox(
-            width: width * 0.95, // Slight padding inside the paper
-            height: height * 0.95,
-            child: child,
+    return RepaintBoundary(
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CustomPaint(
+            size: Size(width, height),
+            painter: TornPaperPainter(),
           ),
-      ],
+          if (child != null)
+            SizedBox(
+              width: width * 0.95, // Slight padding inside the paper
+              height: height * 0.95,
+              child: child,
+            ),
+        ],
+      ),
     );
   }
 }
