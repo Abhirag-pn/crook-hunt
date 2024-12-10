@@ -1,3 +1,4 @@
+import 'package:crookhunt/ui/pages/level0/Answer0.dart';
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
@@ -83,7 +84,7 @@ class _RulesPageState extends State<RulesPage> {
                         if(codecontroller.text.toLowerCase().trim()=="100100"){
 
                             // ignore: prefer_const_constructors
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Paper(text: ""),));
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Answer0(),));
                         }
                       }),
                   const Spacer()

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/Level5/level5.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/custompage.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
@@ -17,6 +18,7 @@ class Answer4 extends StatefulWidget {
 }
 
 class _PaperState extends State<Answer4> {
+  final level4controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +51,7 @@ class _PaperState extends State<Answer4> {
                   height: MediaQuery.of(context).size.height / 25,
                 ),
                 Text(
-                  "Hint: Find the body",
+                  "Hint: Find Darwins location",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -60,12 +62,38 @@ class _PaperState extends State<Answer4> {
                 ),
                 CustomTextFeild(
                     hinttext: "Enter The Answer",
-                    controller: TextEditingController()),
+                    controller: level4controller),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 28,
                 ),
                 BouncingTextButton(
-                    button: "assets/images/submit.png", action: () {}),
+                    button: "assets/images/submit.png", action: (){
+
+                      if (level4controller.text.trim().toLowerCase() ==
+                              "sanfransisco") {
+                        Navigator.popUntil(
+                          context,
+                          (route) => route.isFirst,
+                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Level5(),
+                            ));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          "Wrong Answer!",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontFamily: 'Neucha',
+                                  color:
+                                      const Color.fromARGB(255, 255, 244, 187)),
+                        )));
+                      }
+                    }),
                 const Spacer(),
               ],
             ),

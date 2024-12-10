@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/rulespage.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
 import 'package:crookhunt/utils/firestoreservice.dart';
@@ -83,6 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                await SharedPrefService.setTeamId(teamid);
                 // ignore: use_build_context_synchronously
                 await FirestoreService.setTeamData(teamid, mem1, mem2, mem3,context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RulesPage(),));
                 
               }),
             

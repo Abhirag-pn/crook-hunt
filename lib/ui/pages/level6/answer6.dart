@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/victory.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/custompage.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
@@ -8,6 +9,7 @@ import 'package:crookhunt/ui/widgets/roundedrectangle.dart';
 import 'package:flutter/material.dart';
 
 class Answer6 extends StatefulWidget {
+  
   const Answer6({
     super.key,
   });
@@ -17,6 +19,7 @@ class Answer6 extends StatefulWidget {
 }
 
 class _PaperState extends State<Answer6> {
+  final level6controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,14 +45,14 @@ class _PaperState extends State<Answer6> {
                   height: MediaQuery.of(context).size.height / 25,
                 ),
                 const RoundedImageWidget(
-                  imagePath: "assets/images/level1/L1C.jpg",
+                  imagePath: "assets/images/level1/L6C.jpg",
                   clue: true,
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 25,
                 ),
                 Text(
-                  "Hint: Find the body",
+                  "Hint: Close to the crowd where voices blend,an abandoned restroom awaits the end",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -60,12 +63,38 @@ class _PaperState extends State<Answer6> {
                 ),
                 CustomTextFeild(
                     hinttext: "Enter The Answer",
-                    controller: TextEditingController()),
+                    controller: level6controller),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 28,
                 ),
                 BouncingTextButton(
-                    button: "assets/images/submit.png", action: () {}),
+                    button: "assets/images/submit.png", action: () {
+                      if (level6controller.text.trim().toLowerCase() ==
+                          "vijnana") {
+                        Navigator.popUntil(
+                          context,
+                          (route) => route.isFirst,
+                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Victory(),
+                            ));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          "Wrong Answer!",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontFamily: 'Neucha',
+                                  color:
+                                      const Color.fromARGB(255, 255, 244, 187)),
+                        )));
+                    }
+
+                    }),
                 const Spacer(),
               ],
             ),

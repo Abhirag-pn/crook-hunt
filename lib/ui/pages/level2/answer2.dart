@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/level3/level3.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/custompage.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
@@ -17,6 +18,7 @@ class Answer2 extends StatefulWidget {
 class _PaperState extends State<Answer2> {
   @override
   Widget build(BuildContext context) {
+    final level2controller=TextEditingController();
     return Container(
       height: double.maxFinite,
       width: double.maxFinite,
@@ -60,11 +62,38 @@ class _PaperState extends State<Answer2> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height/20,
                   ),
-               CustomTextFeild(hinttext: "Enter The Answer", controller: TextEditingController()),
+               CustomTextFeild(hinttext: "Enter The Answer", controller: level2controller),
               SizedBox(
                     height: MediaQuery.of(context).size.height/28,
                   ),
-                  BouncingTextButton(button: "assets/images/submit.png", action: (){}),
+                  BouncingTextButton(button: "assets/images/submit.png", action: (){
+                      if (level2controller.text.trim().toLowerCase() ==
+                              "greed destroys" ||
+                          level2controller.text.trim().toLowerCase() ==
+                              "greeddestroys") {
+                        Navigator.popUntil(
+                          context,
+                          (route) => route.isFirst,
+                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Level3(),
+                            ));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          "Wrong Answer!",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontFamily: 'Neucha',
+                                  color:
+                                      const Color.fromARGB(255, 255, 244, 187)),
+                        )));
+                      }
+                    }),
                  
                  const  Spacer(),
               ],

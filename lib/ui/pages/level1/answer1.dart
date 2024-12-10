@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:crookhunt/ui/pages/level1/reveal1.dart';
+import 'package:crookhunt/ui/pages/level2/level2.dart';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/custompage.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
@@ -17,6 +19,7 @@ class Answer1 extends StatefulWidget {
 }
 
 class _PaperState extends State<Answer1> {
+  final level1controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,12 +63,37 @@ class _PaperState extends State<Answer1> {
                 ),
                 CustomTextFeild(
                     hinttext: "Enter The Answer",
-                    controller: TextEditingController()),
+                    controller:level1controller),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 28,
                 ),
                 BouncingTextButton(
-                    button: "assets/images/submit.png", action: () {}),
+                    button: "assets/images/submit.png", action: () 
+                    {
+                        if (level1controller.text.trim().toLowerCase() ==
+                          "cb6723") {
+                        Navigator.popUntil(
+                          context,
+                          (route) => route.isFirst,
+                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Reveal1(),
+                            ));
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          "Wrong Answer!",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontFamily: 'Neucha',
+                                  color:
+                                      const Color.fromARGB(255, 255, 244, 187)),
+                        )));
+                    }}),
                 const Spacer(),
               ],
             ),
