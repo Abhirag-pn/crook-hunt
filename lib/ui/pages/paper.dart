@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class Paper extends StatelessWidget {
   final String text;
   final String? img;
-  const Paper({super.key, required this.text, this.img});
+  final bool clue;
+  const Paper({super.key, required this.text, this.img,  this.clue=false});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class Paper extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: 'Neucha', fontWeight: FontWeight.bold),
                 ),
-                if(img!=null)RoundedImageWidget(imagePath: img!)
+                if(img!=null)RoundedImageWidget(imagePath: img!,clue: clue,)
                 
               ],
             ),

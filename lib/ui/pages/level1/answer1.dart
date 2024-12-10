@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:crookhunt/ui/widgets/bouncingtextbutton.dart';
 import 'package:crookhunt/ui/widgets/custompage.dart';
 import 'package:crookhunt/ui/widgets/customtextfeild.dart';
+import 'package:crookhunt/ui/widgets/roundedrectangle.dart';
 
 import 'package:flutter/material.dart';
 
@@ -42,8 +43,12 @@ class _PaperState extends State<Answer1> {
                         .headlineSmall
                         
                   ),
-                  const SizedBox(
-                    height: 15,
+                 SizedBox(
+                    height: MediaQuery.of(context).size.height/25,
+                  ),
+                 const  RoundedImageWidget(imagePath: "assets/images/level1/one.jpg",clue: true,),
+                    SizedBox(
+                    height: MediaQuery.of(context).size.height/25,
                   ),
                    Text(
                     "Hint: Find the body",
@@ -52,24 +57,22 @@ class _PaperState extends State<Answer1> {
                         .titleLarge!
                         .copyWith(fontFamily: 'Neucha'),
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height/20,
                   ),
                CustomTextFeild(hinttext: "Enter The Answer", controller: TextEditingController()),
-              const SizedBox(
-                    height: 50,
+              SizedBox(
+                    height: MediaQuery.of(context).size.height/28,
                   ),
                   BouncingTextButton(button: "assets/images/submit.png", action: (){}),
-                  const  Spacer(),
+                 
+                 const  Spacer(),
               ],
             ),
           ),
             )
         ),
-        floatingActionButton: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
+         floatingActionButton: 
             FloatingActionButton(
               heroTag: 'bt1',
                 backgroundColor: Colors.brown,
@@ -78,19 +81,6 @@ class _PaperState extends State<Answer1> {
                    Navigator.pop(context);
                 
                 }),
-            const SizedBox(
-              width: 30,
-            ),
-            FloatingActionButton(
-              heroTag: 'bt2',
-                backgroundColor: Colors.brown,
-                child: const Icon(Icons.arrow_forward),
-                onPressed: () {
-                  
-                log("Next level"); 
-                }),
-          ],
-        ),
       ),
     );
   }

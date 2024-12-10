@@ -51,7 +51,7 @@ class _ImagedisplayState extends State<Imagedisplay> {
                 // Confirm delete (hide the image)
                 setState(() {
                   //TODO change correct to image
-                  if (widget.img == 'assets/images/level1/two.jpg') {
+                  if (widget.img == 'assets/images/level1/one.jpg') {
                     hide = false;
                   }
                 });

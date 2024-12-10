@@ -2,18 +2,20 @@ import 'dart:developer';
 
 import 'package:crookhunt/ui/pages/level1/answer1.dart';
 import 'package:crookhunt/ui/pages/level1/level1content.dart';
+import 'package:crookhunt/ui/pages/level3/answer3.dart';
+import 'package:crookhunt/ui/pages/level3/level3content.dart';
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:flutter/material.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
 
-class Level1 extends StatefulWidget {
-  const Level1({super.key});
+class Level3 extends StatefulWidget {
+  const Level3({super.key});
 
   @override
-  State<Level1> createState() => _LevelOneState();
+  State<Level3> createState() => _LevelOneState();
 }
 
-class _LevelOneState extends State<Level1> {
+class _LevelOneState extends State<Level3> {
   int currentIndex=0;
   final controller = TurnPageController();
   @override
@@ -22,8 +24,8 @@ class _LevelOneState extends State<Level1> {
       body: TurnPageView.builder(
         useOnSwipe: false,
         controller: controller,
-        itemCount: content1.length,
-        itemBuilder: (context, int index) => Paper(text: content1[index].text,img:content1[index].image ,),
+        itemCount: content3.length,
+        itemBuilder: (context, int index) => Paper(text: content3[index].text,img:content3[index].image ,),
         overleafColorBuilder: (index) => Colors.brown.withOpacity(0.5),
         animationTransitionPoint: 0.2,
       ),
@@ -38,7 +40,7 @@ class _LevelOneState extends State<Level1> {
                 onPressed: () {
                    log(currentIndex.toString());
                   setState(() {
-                    if(currentIndex>0&&currentIndex<content1.length)
+                    if(currentIndex>0&&currentIndex<content3.length)
                     {currentIndex-=1;
                     controller.previousPage();}
                   });
@@ -53,19 +55,19 @@ class _LevelOneState extends State<Level1> {
                 onPressed: () {
                   log(currentIndex.toString());
                   
-                  if(currentIndex==content1.length-1)
+                  if(currentIndex==content3.length-1)
                   {
                     Navigator.push(context,TurnPageRoute(
                   overleafColor: Colors.brown.withOpacity(0.5),
                   animationTransitionPoint: 0.2,
                   transitionDuration: const Duration(milliseconds: 300),
                   reverseTransitionDuration: const Duration(milliseconds: 300),
-                  builder: (context) => const Answer1(),
+                  builder: (context) => const Answer3(),
                 ),);
                     
                     return;
                   }
-                  if(currentIndex<content1.length-1){
+                  if(currentIndex<content3.length-1){
                     currentIndex+=1;
                      controller.nextPage();
                   }
