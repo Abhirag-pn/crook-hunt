@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:crookhunt/ui/pages/Level5/answer5.dart';
+
 import 'package:crookhunt/ui/pages/Level5/Level5content.dart';
-import 'package:crookhunt/ui/pages/Level5/level5content.dart';
+import 'package:crookhunt/ui/pages/Level5/answer5.dart';
 import 'package:crookhunt/ui/pages/paper.dart';
 import 'package:flutter/material.dart';
 import 'package:turn_page_transition/turn_page_transition.dart';
@@ -38,7 +38,7 @@ class _LevelOneState extends State<Level5> {
           FloatingActionButton(
               heroTag: 'bt1',
               backgroundColor: Colors.brown,
-              child: const Icon(Icons.arrow_back),
+              child: const Icon(Icons.arrow_back,color:Color.fromARGB(255, 255, 244, 187)),
               onPressed: () {
                 log(currentIndex.toString());
                 setState(() {
@@ -54,7 +54,7 @@ class _LevelOneState extends State<Level5> {
           FloatingActionButton(
               heroTag: 'bt2',
               backgroundColor: Colors.brown,
-              child: const Icon(Icons.arrow_forward),
+              child: const Icon(Icons.arrow_forward,color:Color.fromARGB(255, 255, 244, 187)),
               onPressed: () {
                 log(currentIndex.toString());
 

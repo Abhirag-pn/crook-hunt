@@ -28,7 +28,8 @@ class Paper extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: MediaQuery.of(context).size.height/43,
                       fontFamily: 'Neucha', fontWeight: FontWeight.bold),
                 ),
                 if (img != null)

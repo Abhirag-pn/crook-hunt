@@ -3,12 +3,12 @@ import 'package:crookhunt/models/pagemodel.dart';
 List<PageModel> content5 = [
   PageModel(
       text:
-          '''Dr. Malhotra was a well-known neuro surgeon, but he had a big ego and always thought he was right. One night at 8:45 p.m., a woman brought her injured son to the hospital. After checking the boy, Dr. Malhotra decided to do surgery based on what he thought was correct.
-                            \nA junior doctor noticed a mistake in his decision and told him about it. But Dr. Malhotra’s ego didn’t let him listen. He did the surgery anyway, and because of his mistake, the boy died.
+          '''A poor woman who was good at fashion designing worked hard every day to take care of herself and her young son. She spent hours making beautiful clothes, hoping her hard work would help them live a better life. Finally, people started noticing her designs, and her shop began to get more orders. She felt happy and thought her struggles were finally paying off.
+                            \nBut some of her friends became jealous of her success. One night, out of envy, they set her shop on fire. The fire destroyed everything she had worked for, and she was badly injured while trying to save her designs. She was rushed to the hospital, leaving her son worried and scared.
                           ''',
-      image: 'assets/images/level1/L11.jpg'),
+      image: 'assets/images/level1/L51.jpg'),
   PageModel(
       text:
-          ''' To make things worse, the hospital didn’t give the boy’s body to the mother, saying she hadn’t paid the full bill. Instead, they kept the body in the mortuary near the electrical control cabinet \n''',
-      image: 'assets/images/level1/L12.jpg')
+          ''' With no money left to pay for her treatment or their living expenses, the family was in big trouble. Her son, though very young, decided to take up a small job to help his mother. He wanted to make sure she could get better, even if it meant giving up his childhood. \n''',
+      image: 'assets/images/level1/L52.jpg')
 ];

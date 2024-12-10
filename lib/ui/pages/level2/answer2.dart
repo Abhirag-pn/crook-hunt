@@ -37,7 +37,7 @@ class _PaperState extends State<Answer2> {
                const  Spacer(), 
                Text(
                
-                    "Stage One",
+                    "Stage Two",
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall
@@ -46,12 +46,12 @@ class _PaperState extends State<Answer2> {
                  SizedBox(
                     height: MediaQuery.of(context).size.height/25,
                   ),
-                 const  RoundedImageWidget(imagePath: "assets/images/level1/one.jpg",clue: true,),
+                 const  RoundedImageWidget(imagePath: "assets/images/level1/L2C.jpg",clue: true,),
                     SizedBox(
                     height: MediaQuery.of(context).size.height/25,
                   ),
                    Text(
-                    "Hint: Find the body",
+                    "Hint: Only the brave who let things go find find what lies below",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -76,7 +76,7 @@ class _PaperState extends State<Answer2> {
             FloatingActionButton(
               heroTag: 'bt1',
                 backgroundColor: Colors.brown,
-                child: const Icon(Icons.arrow_back),
+                child: const Icon(Icons.arrow_back,color:Color.fromARGB(255, 255, 244, 187)),
                 onPressed: () {
                    Navigator.pop(context);
                 

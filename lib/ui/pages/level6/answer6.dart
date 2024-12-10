@@ -7,16 +7,16 @@ import 'package:crookhunt/ui/widgets/roundedrectangle.dart';
 
 import 'package:flutter/material.dart';
 
-class Answer4 extends StatefulWidget {
-  const Answer4({
+class Answer6 extends StatefulWidget {
+  const Answer6({
     super.key,
   });
 
   @override
-  State<Answer4> createState() => _PaperState();
+  State<Answer6> createState() => _PaperState();
 }
 
-class _PaperState extends State<Answer4> {
+class _PaperState extends State<Answer6> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +36,7 @@ class _PaperState extends State<Answer4> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const Spacer(),
-                Text("Stage Four",
+                Text("Stage Six",
                     style: Theme.of(context).textTheme.headlineSmall),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 25,

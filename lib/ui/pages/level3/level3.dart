@@ -36,7 +36,7 @@ class _LevelOneState extends State<Level3> {
             FloatingActionButton(
               heroTag: 'bt1',
                 backgroundColor: Colors.brown,
-                child: const Icon(Icons.arrow_back),
+                child: const Icon(Icons.arrow_back,color:Color.fromARGB(255, 255, 244, 187)),
                 onPressed: () {
                    log(currentIndex.toString());
                   setState(() {
@@ -51,7 +51,7 @@ class _LevelOneState extends State<Level3> {
             FloatingActionButton(
               heroTag: 'bt2',
                 backgroundColor: Colors.brown,
-                child: const Icon(Icons.arrow_forward),
+                child: const Icon(Icons.arrow_forward,color:Color.fromARGB(255, 255, 244, 187)),
                 onPressed: () {
                   log(currentIndex.toString());
                   

@@ -37,7 +37,7 @@ class _PaperState extends State<Answer3> {
                const  Spacer(), 
                Text(
                
-                    "Stage One",
+                    "Stage Three",
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall
@@ -46,12 +46,12 @@ class _PaperState extends State<Answer3> {
                  SizedBox(
                     height: MediaQuery.of(context).size.height/25,
                   ),
-                 const  RoundedImageWidget(imagePath: "assets/images/level1/one.jpg",clue: true,),
+                 const  RoundedImageWidget(imagePath: "assets/images/level1/L3C.jpg",clue: true,),
                     SizedBox(
                     height: MediaQuery.of(context).size.height/25,
                   ),
                    Text(
-                    "Hint: Find the body",
+                    "Hint: Go to the ashes where the fire once burned,and let your journey continue ever onward",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -76,7 +76,7 @@ class _PaperState extends State<Answer3> {
             FloatingActionButton(
               heroTag: 'bt1',
                 backgroundColor: Colors.brown,
-                child: const Icon(Icons.arrow_back),
+                child: const Icon(Icons.arrow_back,color:Color.fromARGB(255, 255, 244, 187)),
                 onPressed: () {
                    Navigator.pop(context);
                 
