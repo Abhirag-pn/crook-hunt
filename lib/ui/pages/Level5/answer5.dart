@@ -7,16 +7,16 @@ import 'package:crookhunt/ui/widgets/roundedrectangle.dart';
 
 import 'package:flutter/material.dart';
 
-class Answer1 extends StatefulWidget {
-  const Answer1({
+class Answer5 extends StatefulWidget {
+  const Answer5({
     super.key,
   });
 
   @override
-  State<Answer1> createState() => _PaperState();
+  State<Answer5> createState() => _PaperState();
 }
 
-class _PaperState extends State<Answer1> {
+class _PaperState extends State<Answer5> {
   @override
   Widget build(BuildContext context) {
     return Container(

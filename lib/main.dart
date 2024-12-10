@@ -1,6 +1,7 @@
 import 'package:crookhunt/ui/pages/level1/level1.dart';
 import 'package:crookhunt/ui/pages/level2/level2.dart';
 import 'package:crookhunt/ui/pages/level3/level3.dart';
+import 'package:crookhunt/ui/pages/level4/level4.dart';
 import 'package:crookhunt/utils/shared_pref_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

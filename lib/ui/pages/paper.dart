@@ -6,7 +6,7 @@ class Paper extends StatelessWidget {
   final String text;
   final String? img;
   final bool clue;
-  const Paper({super.key, required this.text, this.img,  this.clue=false});
+  const Paper({super.key, required this.text, this.img, this.clue = false});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,6 @@ class Paper extends StatelessWidget {
             image: AssetImage('assets/images/levelbg.jpg'), fit: BoxFit.fill),
       ),
       child: Scaffold(
-        
         backgroundColor: Colors.transparent,
         body: Center(
             child: OldPaperWidget(
@@ -32,13 +31,15 @@ class Paper extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: 'Neucha', fontWeight: FontWeight.bold),
                 ),
-                if(img!=null)RoundedImageWidget(imagePath: img!,clue: clue,)
-                
+                if (img != null)
+                  RoundedImageWidget(
+                    imagePath: img!,
+                    clue: clue,
+                  )
               ],
             ),
           ),
-            )
-        ),
+        )),
       ),
     );
   }
